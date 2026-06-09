@@ -37,7 +37,7 @@ for (const tarjeta of tarjet){
             </div>
             <span class="flex items-center gap-1">
             
-             <img src="./public/star.svg" alt= "star" class="w-4 h-4 ">${tarjeta.rating}</span>
+             <img src="/star.svg" alt= "star" class="w-4 h-4 ">${tarjeta.rating}</span>
             </div>
             <h2 class="text-lg font-bold dark:text-[#EBEFF5]"> ${tarjeta.title}</h2> 
            
