@@ -103,8 +103,8 @@ ocultar.addEventListener("click", () => {
     menu.classList.add("hidden");
 });
 
-mostrar.addEventListener("click", (e) => {
-    // e.stopPropagation(); 
+mostrar.addEventListener("click", () => {
+  
     menu.classList.remove("hidden");
 });
 
@@ -156,9 +156,7 @@ addL.addEventListener("input", () => {
     filtrarTodo();
 });
 
-btnAddGuest.addEventListener("click", (e) => {
-
-    // e.stopPropagation();
+btnAddGuest.addEventListener("click", () => {
 
     addGuestAC.classList.toggle("hidden");
 });
