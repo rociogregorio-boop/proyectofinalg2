@@ -9,10 +9,10 @@ async function capturarDatos() {
         let data = await respuesta.json();
         return data;
     } catch (error) {
-        console.error(`${error}`);
+        alert(`${error}`);
     }
 }
-
+//defino variables globales para comunicarme con el DOM
 let tarjet = await capturarDatos();
 let contenedorTarjeta = document.querySelector("#tarjeta");
 let btnAl = document.querySelector("#btnAl");
@@ -73,7 +73,7 @@ function filtrarCiudad() {
     renderizarHtml(resultado)
 
   
-    console.log(resultado)
+    // console.log(resultado)
 }
 
 
@@ -86,7 +86,7 @@ addL.addEventListener("input", () => {
             ? "Add location"
             : addL.value;
 });
-console.log(filtrarCiudad)
+// console.log(filtrarCiudad)
 
 
 // 
@@ -100,11 +100,11 @@ ocultar.addEventListener("click", () => {
 });
 
 mostrar.addEventListener("click", (e) => {
-    e.stopPropagation(); 
+    // e.stopPropagation(); 
     menu.classList.remove("hidden");
 });
 
-//
+//defini variable para interactuar con contadoresde huesped
 
 let btnAddGuest = document.querySelector("#btnAddGuest");
 
@@ -117,7 +117,7 @@ let masNinos = document.querySelector("#masNinos");
 let childCount = document.querySelector("#childCount");
 
 let addGuestAC = document.querySelector("#addGuestAC");
-
+//
 let contador = 0;
 let contadorNinos = 0;
 function filtrarTodo() {
@@ -154,7 +154,7 @@ addL.addEventListener("input", () => {
 
 btnAddGuest.addEventListener("click", (e) => {
 
-    e.stopPropagation();
+    // e.stopPropagation();
 
     addGuestAC.classList.toggle("hidden");
 });
