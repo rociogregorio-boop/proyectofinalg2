@@ -19,13 +19,16 @@ let btnAl = document.querySelector("#btnAl");
 let addL = document.querySelector("#addL");
 renderizarHtml(tarjet)
 
+
 function renderizarHtml(lista){
+    //limpia el contenedor principal
     contenedorTarjeta.innerHTML=""
-    for (const tarjeta of lista){
-     
+    //declaro una variable q almacena mis tarj
         let tarjetasGeneradas = "" ;
-    
-    tarjetasGeneradas+=`
+        //recorre el array y los almacen dentro de mi tarjetasGeneradas
+        for (const tarjeta of lista){
+     
+      tarjetasGeneradas+=`
             <div>
 
             <img class="rounded-3xl w-full h-60 object-cover p-4" src=${tarjeta.photo} alt="Stylist apartment in center of the city">
@@ -50,9 +53,10 @@ function renderizarHtml(lista){
             </div>
 
         </div>`
-    contenedorTarjeta.innerHTML += tarjetasGeneradas;
+   
         }
-    
+//convierte targetaGeneradas en html
+     contenedorTarjeta.innerHTML = tarjetasGeneradas;
 }
 
 
@@ -73,7 +77,7 @@ function filtrarCiudad() {
     renderizarHtml(resultado)
 
   
-    // console.log(resultado)
+   
 }
 
 
@@ -86,7 +90,7 @@ addL.addEventListener("input", () => {
             ? "Add location"
             : addL.value;
 });
-// console.log(filtrarCiudad)
+
 
 
 // 
