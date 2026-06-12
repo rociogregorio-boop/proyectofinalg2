@@ -9,86 +9,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>proyecto-final</title>
   </head>
-  <body class= "bg-white dark:bg-[#22242F]"> 
-    
-       <header class="flex flex-col dark:bg-[#22242F] md:flex-row justify-between items-center gap-4 mb-8">
-    <div><img src="./logo-f7862584.svg" alt=""></div>
-    
-    <div id="boton" class="flex items-center bg-white dark:bg-[#22242F] shadow-md border border-gray-100 dark:border-gray-700 rounded-2xl overflow-hidden w-full max-w-sm cursor-pointer"> 
-      <button  id="btnAl" class="flex-1 text-left text-xs text-gray-400 p-4 focus:outline-none border-r border-gray-100 dark:border-gray-700">Add location</button>
-      <button class="flex-1 text-left text-xs text-gray-400 p-4 focus:outline-none border-r border-gray-100 dark:border-gray-700">Add guest</button>
-      <button class="p-4 flex items-center justify-center focus:outline-none bg-white dark:bg-[#22242F]">
-        <img src="/search.svg" alt="search" class="w-4">
-      </button>
-    </div>
-  </header>
-  <section class="bg-white dark:bg-[#1A1B23] p-4 sm:p-8">
 
-  <div id="dropdwn" class="fixed inset-0 bg-black/40 z-50 hidden transition-all">
-    <div class="bg-white dark:bg-[#22242F] w-full h-full md:h-[50vh] p-6 flex flex-col justify-between md:justify-start shadow-2xl">
+<body class="bg-white dark:bg-[#22242F]">
+  <div class="max-w-7xl mx-auto p-4 sm:p-8">
+
+    <header class="flex flex-col md:flex-row justify-between items-center gap-4 mb-8">
       <div>
-        <div class="flex justify-between items-center mb-6 md:hidden">
-          <span class="text-sm font-bold text-gray-800 dark:text-white">Edit your search</span>
-          <span id="close" class="text-2xl cursor-pointer font-light hover:text-red-500">&times;</span>
-        </div>
-
-        <div  class="flex flex-col md:flex-row md:items-center bg-white dark:bg-[#1e202b] rounded-2xl md:shadow-md border border-gray-100 dark:border-gray-700 overflow-hidden max-w-5xl mx-auto w-full">
-          <div class="flex-1 border-b md:border-b-0 md:border-r border-gray-100 dark:border-gray-700 p-3 md:px-6">
-            <label class="block text-[10px] font-bold uppercase text-gray-800 dark:text-gray-300">Location</label>
-            <input id="addL" type="text" placeholder="Add location" class="w-full bg-transparent text-sm text-gray-600 dark:text-white placeholder-gray-400 focus:outline-none mt-1"/>
-          </div>
-          <div class="flex-1 border-b md:border-b-0 md:border-r border-gray-100 dark:border-gray-700 p-3 md:px-6 relative">
-            <label class="block text-[10px] font-bold uppercase text-gray-800 dark:text-gray-300">Guests</label>
-            <input id="btnAddGuest" type="text" placeholder="Add guests" readonly class="w-full bg-transparent text-sm text-gray-600 dark:text-white placeholder-gray-400 focus:outline-none mt-1 cursor-pointer"/>
-          </div>
-          <div class="hidden md:flex items-center justify-center p-3 px-6">
-            <button id="btnBuscar" class="bg-[#ff695e] hover:bg-red-500 text-white text-sm font-medium px-6 py-2.5 rounded-2xl flex items-center gap-2 shadow-sm transition-all">
-              <img src="/search.svg" alt="">
-            </button>
-          </div>
-        </div>
-
-        <div id="addGuestAC" class="hidden md:absolute bg-white dark:bg-[#22242F] p-4 rounded-xl mt-4 max-w-5xl mx-auto w-full md:w-[33%] md:left-[35%] transition-all z-50">
-          <div class="mb-6">
-            <p class="font-bold text-sm text-gray-800 dark:text-white">Adults</p>
-            <p class="text-gray-400 text-xs">Ages 13 or above</p>
-            <div class="flex items-center gap-4 mt-2">
-              <button id="menosAdult" class="border border-gray-300 dark:border-gray-600 w-8 h-8 flex items-center justify-center rounded text-gray-500 dark:text-white">-</button>
-              <span id="adultCount" class="font-medium text-sm dark:text-white">0</span>
-              <button id="masAdult" class="border border-gray-300 dark:border-gray-600 w-8 h-8 flex items-center justify-center rounded text-gray-500 dark:text-white">+</button>
-            </div>
-          </div>
-          <div>
-            <p class="font-bold text-sm text-gray-800 dark:text-white">Children</p>
-            <p class="text-gray-400 text-xs">Ages 2-12</p>
-            <div class="flex items-center gap-4 mt-2">
-              <button id="menosNinos" class="border border-gray-300 dark:border-gray-600 w-8 h-8 flex items-center justify-center rounded text-gray-500 dark:text-white">-</button>
-              <span id="childCount" class="font-medium text-sm dark:text-white">0</span>
-              <button id="masNinos" class="border border-gray-300 dark:border-gray-600 w-8 h-8 flex items-center justify-center rounded text-gray-500 dark:text-white">+</button>
-            </div>
-          </div>
+        <img src="./logo-f7862584.svg" alt="Windbnb Logo">
+      </div>
+      
+      <div id="boton" class="flex items-center bg-white dark:bg-[#22242F] shadow-md border border-gray-100 dark:border-gray-700 rounded-2xl overflow-hidden w-full max-w-sm cursor-pointer"> 
+        <button id="btnAl" class="flex-1 text-left text-xs text-gray-400 p-4 focus:outline-none border-r border-gray-100 dark:border-gray-700 pointer-events-none">Add location</button>
+        <button class="flex-1 text-left text-xs text-gray-400 p-4 focus:outline-none border-r border-gray-100 dark:border-gray-700 pointer-events-none">Add guest</button>
+        <div class="p-4 flex items-center justify-center bg-white dark:bg-[#22242F]">
+          <img src="/search.svg" alt="search" class="w-4">
         </div>
       </div>
+    </header>
 
-      <div class="w-full flex justify-center p-4 md:hidden">
-        <button id="btnBuscarMovil" class="bg-[#ff695e] text-white text-sm font-medium px-8 py-3 rounded-2xl flex items-center gap-2 w-full justify-center">
-          <img src="/search.svg" alt="">
-        </button>
+    <div id="dropdwn" class="fixed inset-0 bg-black/40 z-50 hidden transition-all">
+      <div class="relative bg-white dark:bg-[#22242F] w-full h-full md:h-[50vh] p-6 flex flex-col justify-between md:justify-start shadow-2xl">
+        
+        <div class="mt-4">
+          <div class="flex flex-col md:flex-row md:items-center bg-white dark:bg-[#1e202b] rounded-2xl md:shadow-md border border-gray-100 dark:border-gray-700 overflow-hidden max-w-5xl mx-auto w-full">
+            
+            <div class="flex-1 border-b md:border-b-0 md:border-r border-gray-100 dark:border-gray-700 p-3 md:px-6">
+              <label for="addL" class="block text-[10px] font-bold uppercase text-gray-800 dark:text-gray-300">Location</label>
+              <input id="addL" type="text" placeholder="Add location" class="w-full bg-transparent text-sm text-gray-600 dark:text-white placeholder-gray-400 focus:outline-none mt-1"/>
+            </div>
+
+            <div class="flex-1 border-b md:border-b-0 md:border-r border-gray-100 dark:border-gray-700 p-3 md:px-6 relative">
+              <label for="btnAddGuest" class="block text-[10px] font-bold uppercase text-gray-800 dark:text-gray-300">Guests</label>
+              <input id="btnAddGuest" type="text" placeholder="Add guests" readonly class="w-full bg-transparent text-sm text-gray-600 dark:text-white placeholder-gray-400 focus:outline-none mt-1 cursor-pointer"/>
+            </div>
+
+            <div class="hidden md:flex items-center justify-center p-3 px-6">
+              <button id="btnBuscar" class="bg-[#ff695e] hover:bg-red-500 text-white text-sm font-medium px-6 py-2.5 rounded-2xl flex items-center gap-2 shadow-sm transition-all" aria-label="Search">
+                <img src="/search.svg" alt="" class="w-4 h-4">
+              </button>
+            </div>
+          </div>
+
+          <div id="addGuestAC" class="hidden md:absolute bg-white dark:bg-[#22242F] p-4 rounded-xl mt-4 max-w-5xl mx-auto w-full md:w-[33%] md:left-[35%] transition-all z-50">
+            <div class="mb-6">
+              <p class="font-bold text-sm text-gray-800 dark:text-white">Adults</p>
+              <p class="text-gray-400 text-xs">Ages 13 or above</p>
+              <div class="flex items-center gap-4 mt-2">
+                <button id="menosAdult" class="border border-gray-300 dark:border-gray-600 w-8 h-8 flex items-center justify-center rounded text-gray-500 dark:text-white focus:outline-none">-</button>
+                <span id="adultCount" class="font-medium text-sm dark:text-white">0</span>
+                <button id="masAdult" class="border border-gray-300 dark:border-gray-600 w-8 h-8 flex items-center justify-center rounded text-gray-500 dark:text-white focus:outline-none">+</button>
+              </div>
+            </div>
+            <div>
+              <p class="font-bold text-sm text-gray-800 dark:text-white">Children</p>
+              <p class="text-gray-400 text-xs">Ages 2-12</p>
+              <div class="flex items-center gap-4 mt-2">
+                <button id="menosNinos" class="border border-gray-300 dark:border-gray-600 w-8 h-8 flex items-center justify-center rounded text-gray-500 dark:text-white focus:outline-none">-</button>
+                <span id="childCount" class="font-medium text-sm dark:text-white">0</span>
+                <button id="masNinos" class="border border-gray-300 dark:border-gray-600 w-8 h-8 flex items-center justify-center rounded text-gray-500 dark:text-white focus:outline-none">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="w-full flex justify-center p-4 md:hidden">
+          <button id="close" class="bg-[#ff695e] text-white text-sm font-medium px-8 py-3 rounded-2xl flex items-center gap-2 w-full justify-center">
+            <img src="/search.svg" alt="Search icon" class="w-4 h-4"> Search
+          </button>
+        </div>
       </div>
     </div>
-  </div>
 
-<main>
-    <div id="sFinland" class="mb-6">
-      <h2 class="text-2xl font-bold flex items-center justify-between dark:text-[#EBEFF5]">
-        Stays in Finland
-        <span id="conteinerStays" class="text-xs font-bold text-gray-600 dark:text-[#94A3B8]">12+ stays</span>
-      </h2>
-    </div>
+    <main>
+      <div id="sFinland" class="mb-6">
+        <h2 class="text-2xl font-bold flex items-center justify-between dark:text-[#EBEFF5]">
+          Stays in Finland
+          <span id="conteinerStays" class="text-xs font-bold text-gray-600 dark:text-[#94A3B8]">12+ stays</span>
+        </h2>
+      </div>
+
       <section id="tarjeta" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 h-full w-full"> 
       </section>
-  </main>
+    </main>
 
-</section>
+  </div>
 </body>
+
 </html>

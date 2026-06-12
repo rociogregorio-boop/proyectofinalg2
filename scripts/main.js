@@ -59,7 +59,7 @@ function renderizarHtml(lista){
 
 
 
-// FILTRO POR CIUDAD
+//
 function filtrarCiudad() {
 
     let ciudad = addL.value.toLowerCase().trim();
@@ -89,20 +89,132 @@ addL.addEventListener("input", () => {
 console.log(filtrarCiudad)
 
 
-// ABRIR Y CERRAR MODAL
-let boton = document.querySelector("#boton");
-let dropdwn = document.querySelector("#dropdwn");
+// 
 
-boton.addEventListener("click", () => {
-    dropdwn.classList.toggle("hidden");
+let ocultar = document.querySelector("#close");   // search
+let mostrar = document.querySelector("#boton");   // Barra del header
+let menu    = document.querySelector("#dropdwn"); // El modal entero
+
+ocultar.addEventListener("click", () => {
+    menu.classList.add("hidden");
 });
 
-document.addEventListener("click", (e) => {
+mostrar.addEventListener("click", (e) => {
+    e.stopPropagation(); 
+    menu.classList.remove("hidden");
+});
 
-    if (
-        !dropdwn.contains(e.target) &&
-        !boton.contains(e.target)
-    ) {
-        dropdwn.classList.add("hidden");
+//
+
+let btnAddGuest = document.querySelector("#btnAddGuest");
+
+let menosAdult = document.querySelector("#menosAdult");
+let masAdult = document.querySelector("#masAdult");
+let adultCount = document.querySelector("#adultCount");
+
+let menosNinos = document.querySelector("#menosNinos");
+let masNinos = document.querySelector("#masNinos");
+let childCount = document.querySelector("#childCount");
+
+let addGuestAC = document.querySelector("#addGuestAC");
+
+let contador = 0;
+let contadorNinos = 0;
+function filtrarTodo() {
+
+    let ciudad = addL.value.toLowerCase().trim();
+
+    let huespedes = contador + contadorNinos;
+
+    let resultado = tarjet.filter((lugar) => {
+
+        let coincideCiudad =
+            ciudad === "" ||
+            lugar.city.toLowerCase().includes(ciudad) ||
+            lugar.country.toLowerCase().includes(ciudad);
+
+        let coincideHuespedes =
+            huespedes === 0 ||
+            lugar.maxGuests >= huespedes;
+
+        return coincideCiudad && coincideHuespedes;
+    });
+
+   renderizarHtml(resultado);
+}
+addL.addEventListener("input", () => {
+
+    btnAl.textContent =
+        addL.value.trim() === ""
+            ? "Add location"
+            : addL.value;
+
+    filtrarTodo();
+});
+
+btnAddGuest.addEventListener("click", (e) => {
+
+    e.stopPropagation();
+
+    addGuestAC.classList.toggle("hidden");
+});
+masAdult.addEventListener("click", () => {
+
+    contador++;
+
+    adultCount.textContent = contador;
+
+    actualizarHuespedes();
+});
+
+menosAdult.addEventListener("click", () => {
+
+    if (contador > 0) {
+
+        contador--;
+
+        adultCount.textContent = contador;
+
+        actualizarHuespedes();
     }
+});
+masNinos.addEventListener("click", () => {
+
+    contadorNinos++;
+
+    childCount.textContent = contadorNinos;
+
+    actualizarHuespedes();
+});
+
+menosNinos.addEventListener("click", () => {
+
+    if (contadorNinos > 0) {
+
+        contadorNinos--;
+
+        childCount.textContent = contadorNinos;
+
+        actualizarHuespedes();
+    }
+});
+
+function actualizarHuespedes() {
+
+    let total = contador + contadorNinos;
+
+    btnAddGuest.value =
+        total > 0
+            ? `${total} guests`
+            : "";
+
+    filtrarTodo();
+}
+let btnBuscar = document.querySelector("#btnBuscar");
+
+btnBuscar.addEventListener("click", () => {
+
+    filtrarTodo();
+
+    dropdwn.classList.add("hidden");
 });
